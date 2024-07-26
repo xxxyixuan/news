@@ -1,0 +1,91 @@
+<template>
+  <div ref="chartDom"></div>
+</template>
+
+<script setup>
+import {ref, onMounted, onUnmounted, inject, nextTick} from "vue";
+
+const chartDom = ref(null);
+let chartInstance = null;
+const Echarts = inject('$echarts');
+onMounted(async () => {
+  await nextTick();
+  chartInstance = Echarts.init(chartDom.value);
+  const option = {
+    title: {
+      text: '网民城乡结构',
+      subtext: '数据来源：??',
+      left: 'center'
+    },
+    tooltip: {
+    },
+    legend: {
+      data: ['城镇网民', '乡村网民'],
+      top: 'bottom'
+    },
+    xAxis: {
+      data: ['2022年12月', '2023年12月']
+    },
+    yAxis: {
+      type: 'value',
+      name: '网民比例',
+      min: 0,
+      interval: 30,
+      axisLabel: {
+        formatter: '{value}%'
+      },
+      axisLine: {
+        lineStyle: {
+          color: '#5e8594',
+          width: 2
+        }
+      }
+    },
+    series: [
+      {
+        data: [71.10, 70.20],
+        type: 'bar',
+        name: '城镇网民',
+        stack: '网民',
+        label: {
+          show: true, // 显示标签
+          position: 'inside', // 标签位置，这里设置为在柱状图的顶部
+          formatter: (param) => {
+            return param.value.toFixed(2) + '%';
+          }, // 格式化标签显示的内容，{c} 是数据点的值
+          color: '#fff',
+        },
+      },
+      {
+        data: [70.20, 29.80],
+        type: 'bar',
+        name: '乡村网民',
+        stack: '网民',
+        label: {
+          show: true,
+          position: 'inside', // 标签位置，这里设置为在柱状图的底部
+          formatter: (param) => {
+            return param.value.toFixed(2) + '%';
+          },
+          color: '#000',
+        },
+      }
+    ]
+  };
+  chartInstance.setOption(option);
+});
+
+onUnmounted(() => {
+  if (chartInstance !== null && chartInstance.dispose) {
+    chartInstance.dispose();
+  }
+});
+</script>
+
+<style scoped>
+div {
+  width: 600px;
+  height: 400px;
+}
+
+</style>

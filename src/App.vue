@@ -16,13 +16,15 @@
       />
     </el-anchor>
   </el-affix>
-  <div class="page" id="page-1">
+  <div id="page-1">
       <MainApp/>
   </div>
 
-  <div class="page" id="page0"><h1>0</h1></div>
-  <div class="page" id="page1"><h1>1</h1></div>
-  <div class="page" id="page2"><h1>2</h1></div>
+  <div class="page" id="page0">
+    <page0/>
+  </div>
+  <div class="page" id="page1"><page1></page1></div>
+  <div class="page" id="page2"><page2/></div>
   <div class="page" id="page3"><h1>3</h1></div>
   <div class="page" id="page4"><h1>4</h1></div>
   <div class="page" id="page5"><h1>5</h1></div>
@@ -32,6 +34,11 @@
 <script setup>
 import {ref} from "vue";
 
+import MainApp from "@/components/MainApp.vue";
+import Page0 from "@/components/page0.vue";
+import page1 from "@/components/page1.vue";
+import Page2 from "@/components/page2.vue";
+
 const containerRef = ref(null);
 const handleAnchorClick = (e) => {
   e.preventDefault()
@@ -40,11 +47,17 @@ const handleAnchorClick = (e) => {
 
 <style scoped>
 
+#page-1{
+  height: 804px; /* 根据需要调整高度 */
+  overflow: hidden;
+  width: 100%;
+}
 
 .page {
   height: 804px; /* 根据需要调整高度 */
   overflow: hidden;
   width: 100%;
+  margin-left: 20px;
 }
 
 h1 {

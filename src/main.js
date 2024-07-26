@@ -1,9 +1,13 @@
+import echarts from "./assets/echarts.ts";
 
 import MainApp from "@/components/MainApp.vue";
 
-import { createApp } from 'vue'
+import {createApp} from 'vue'
 import App from './App.vue'
 
 
+const app = createApp(App);
 
-createApp(App).component('MainApp', MainApp).mount('#app')
+app.config.globalProperties.$echarts = echarts;
+app.provide('$echarts', echarts);
+app.mount('#app');
