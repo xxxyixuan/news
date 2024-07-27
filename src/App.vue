@@ -16,18 +16,12 @@
       />
     </el-anchor>
   </el-affix>
-  <div id="page-1">
-      <MainApp/>
-  </div>
-
-  <div class="page" id="page0">
-    <page0/>
-  </div>
-  <div class="page" id="page1"><page1></page1></div>
-  <div class="page" id="page2"><page2/></div>
-  <div class="page" id="page3"><h1>3</h1></div>
-  <div class="page" id="page4"><h1>4</h1></div>
-  <div class="page" id="page5"><h1>5</h1></div>
+  <div id="page-1"><MainApp/></div>
+  <div class="page" id="page0"><backgroundCheck/></div>
+  <div class="page" id="page1"><ActivePhenomenon/></div>
+  <div class="page" id="page2"><InfluenceAndDevelopment/></div>
+  <div class="page" id="page3"><Development3A/></div>
+  <div class="page" id="page4"><Summarize/></div>
 
 </template>
 
@@ -35,29 +29,26 @@
 import {ref} from "vue";
 
 import MainApp from "@/components/MainApp.vue";
-import Page0 from "@/components/page0.vue";
-import page1 from "@/components/page1.vue";
-import Page2 from "@/components/page2.vue";
+import backgroundCheck from "@/components/backgroundCheck.vue";
+import ActivePhenomenon from "@/components/ActivePhenomenon.vue";
+import InfluenceAndDevelopment from "@/components/InfluenceAndDevelopment.vue";
+import Development3A from "@/components/Development3A.vue";
+import Summarize from "@/components/summarize.vue";
 
 const containerRef = ref(null);
 const handleAnchorClick = (e) => {
   e.preventDefault()
 }
+
 </script>
 
 <style scoped>
-
-#page-1{
-  height: 804px; /* 根据需要调整高度 */
-  overflow: hidden;
-  width: 100%;
+*{
+  box-sizing: border-box;
 }
-
 .page {
-  height: 804px; /* 根据需要调整高度 */
   overflow: hidden;
   width: 100%;
-  margin-left: 20px;
 }
 
 h1 {

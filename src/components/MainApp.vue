@@ -3,24 +3,34 @@
 </script>
 
 <template>
-  <div class="box">
-    <img src="../assets/bg.jpg" alt="‘女农人’在新媒体时代中的一席之地"/>
+  <div id="page-1" class="bgC">
+    <h1 style=" width: 100%; Text-align:center ">背景图</h1>
   </div>
 </template>
 
 <style scoped>
-.box {
+#page-1 {
+  display: flex;
+  min-height: 100vh;
+  overflow: hidden;
   width: 100%;
-  height: 804px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 
-img {
+
+.bgC {
+  background: #ddd;
+  width: 70%;
+  text-align:center;
+}
+</style>
+<!--
+#bgIMG {
   width: 100%;
   height: 100%;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-}
-
-
-</style>
+}-->

@@ -1,0 +1,33 @@
+body {
+    margin: 0;
+    background-color: rgba(34,142,34,0.9);
+    color: #FFFFFF;
+    font-family: Arial, sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6{
+    color: #212121;
+}
+
+a {
+    color: #212121; /* 辅助色 */
+    text-decoration: none; /* 可选：去除下划线 */
+}
+
+a:hover {
+    color: #ADFFD9; /* 交互色 */
+}
+
+
+/*
+    BGC         #388E3C
+    bgc         #C8E6C9
+    辅助 #4CAF50
+    font-color  #FFFFFF
+    强调色       #536DFE
+    主要文本     #212121
+    辅助文本     #757575
+    分割符       #BDBDBD
+    交互        #ADFFD9
+
+*/

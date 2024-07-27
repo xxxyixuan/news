@@ -14,10 +14,15 @@ onMounted(async () => {
       const option = {
         // 这里是ECharts的配置项，可以根据需要绘制不同类型的图表
         // 标题
+        text: {
+          color: '#212121'
+        },
         title: {
           text: '2020.3-2023.12 网民规模和互联网普及率',
-          subtext: '数据来源：??',
-          left: 'center'
+          left: 'center',
+          textStyle: {
+            color: '#0044ff',
+          },
         },
         // 提示
         tooltip: {
@@ -42,12 +47,17 @@ onMounted(async () => {
         },
         // 图例
         legend: {
-          data: ['网民规模','互联网普及率'],
+          data: ['网民规模', '互联网普及率'],
           top: 'bottom'
         },
         // x轴
         xAxis: {
-          data: ["2020年3月", "2020年12月", "2021年12月", "2022年12月", "2023年12月"]
+          data: ["2020年3月", "2020年12月", "2021年12月", "2022年12月", "2023年12月"],
+          axisLine: {
+            lineStyle: {
+              color: '#212121'
+            }
+          }
         },
         // y轴
         yAxis: [{
@@ -61,7 +71,7 @@ onMounted(async () => {
           },
           axisLine: {
             lineStyle: {
-              color: '#5e8594',
+              color: '#212121',
               width: 2
             }
           }
@@ -77,7 +87,7 @@ onMounted(async () => {
           },
           axisLine: {
             lineStyle: {
-              color: '#5e8594',
+              color: '#212121',
               width: 2
             }
           }
@@ -95,7 +105,8 @@ onMounted(async () => {
           smooth: true,
           yAxisIndex: 1,
           data: [65.5, 70.4, 73.0, 75.6, 77.5]
-        }]
+        }],
+        position: {top: 50}
       };
       chartInstance.setOption(option);
 

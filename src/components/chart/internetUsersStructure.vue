@@ -12,10 +12,15 @@ onMounted(async () => {
   await nextTick();
   chartInstance = Echarts.init(chartDom.value);
   const option = {
+    text: {
+      color: '#212121'
+    },
     title: {
       text: '网民城乡结构',
-      subtext: '数据来源：??',
-      left: 'center'
+      left: 'center',
+      textStyle: {
+        color: '#0044ff',
+      },
     },
     tooltip: {
     },
@@ -24,7 +29,12 @@ onMounted(async () => {
       top: 'bottom'
     },
     xAxis: {
-      data: ['2022年12月', '2023年12月']
+      data: ['2022年12月', '2023年12月'],
+      axisLine:{
+        lineStyle: {
+          color : '#212121'
+        }
+      }
     },
     yAxis: {
       type: 'value',
@@ -36,7 +46,7 @@ onMounted(async () => {
       },
       axisLine: {
         lineStyle: {
-          color: '#5e8594',
+          color: '#212121',
           width: 2
         }
       }
