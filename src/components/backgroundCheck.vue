@@ -46,8 +46,8 @@
         </el-text>
       </div>
     </div>
-    <img src="../assets/增长top10.png" height="284" width="554" alt="增长top10"/>
-    <img src="../assets/渗透率.png" height="330" width="554" alt="渗透率"/>
+    <img src="../assets/picture/增长top10.png" height="284" width="554" alt="增长top10"/>
+    <img src="../assets/picture/渗透率.png" height="330" width="554" alt="渗透率"/>
   </div>
 </template>
 

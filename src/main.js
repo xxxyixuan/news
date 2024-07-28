@@ -1,6 +1,4 @@
-import echarts from "./assets/echarts.ts";
-
-import MainApp from "@/components/MainApp.vue";
+import echarts from "./assets/script/echarts.ts";
 
 import {createApp} from 'vue'
 import App from './App.vue'
