@@ -102,6 +102,7 @@ onUnmounted(() => {
 
 @media (max-width: 768px) {
   .chart-container {
+    width: 300px;
     height: 300px;
   }
 }

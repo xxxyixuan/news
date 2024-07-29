@@ -1,4 +1,3 @@
-
 <template>
 
   <div class="page">
@@ -19,8 +18,8 @@
       <p>这些自媒体主体通过自媒体平台与广大农村用户进行互动，传递正能量，引导农村社会的发展。</p>
     </div>
     <div class="text-check text-align-center">
-      <img src="../assets/picture/群姐.png" height="432" width="554" alt="群姐"/>
-      <img src="../assets/picture/小英.png" height="444" width="554" alt="小英"/>
+      <img src="../assets/picture/群姐.png" class="img" alt="群姐"/>
+      <img src="../assets/picture/小英.png" class="img" alt="小英"/>
     </div>
     <div class="text-check text-align-center">
       <h2>2、现象分析</h2>
@@ -31,8 +30,11 @@
       <p>
         <span>根据调研数据显示，农村女性自媒体主体的内容主要包括农村生活经验分享、农产品推广、农业技术指导等，其中以农村生活经验分享最为受欢迎。</span>
       </p>
-      <img src="../assets/picture/账号情况.png" height="744" width="554" alt="抖音账号情况"/></div>
-    <img src="../assets/picture/农村女性网红视频类型.png" height="381" width="684" alt="农村女性网红视频类型"/>
+      <div class="text-check" style="margin: auto">
+        <img src="../assets/picture/账号情况.png" class="img" alt="抖音账号情况"/>
+        <img src="../assets/picture/农村女性网红视频类型.png" class="img" alt="农村女性网红视频类型"/>
+      </div>
+    </div>
   </div>
 
 </template>
@@ -53,10 +55,12 @@
   justify-content: space-between;
   overflow-y: auto; /* 允许垂直滚动 */
 }
+
 .text-check {
   width: 70%;
   text-align: left;
 }
+
 .text-align-center {
   text-align: center;
 }
