@@ -110,6 +110,7 @@ import InternetUsersStructure from "@/components/chart/internetUsersStructure.vu
 .text-box {
   width: 70%;
   text-align: left;
+  margin: auto;
 }
 
 .text-align-center {
