@@ -3,15 +3,15 @@
 </script>
 
 <template>
-  <div id="page-1" class="bgC">
-    <h1 style=" width: 100%; Text-align:center ">背景图</h1>
+  <div id="page-1" class="bgC" >
+    <img src="../assets/picture/bg.jpg"  class="bgIMG" alt="背景图"/>
   </div>
 </template>
 
 <style scoped>
 #page-1 {
   display: flex;
-  min-height: 100vh;
+  min-height: 80vh;
   overflow: hidden;
   width: 100%;
   flex-direction: row;
@@ -19,15 +19,20 @@
   justify-content: space-between;
 }
 
-
+.bgIMG {
+  width: 100%;
+  height: 80%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 .bgC {
-  background: #ddd;
-  width: 70%;
+  width: 100%;
   text-align:center;
 }
 </style>
 <!--
-#bgIMG {
+.bgIMG {
   width: 100%;
   height: 100%;
   background-size: cover;

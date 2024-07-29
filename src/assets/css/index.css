@@ -19,6 +19,29 @@ a:hover {
 }
 
 
+/* 媒体查询：针对最大宽度为600px的设备 */
+@media (max-width: 600px) {
+    .page {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .show-chart {
+        flex-direction: column;
+    }
+
+    .chart {
+        width: 100%; /* 占满屏幕宽度 */
+        height: auto; /* 根据内容自动调整高度 */
+    }
+
+    .text-check {
+        width: 100%; /* 占满屏幕宽度 */
+    }
+
+    /* 其他针对手机的样式调整 */
+}
+
 /*
     BGC         #388E3C
     bgc         #C8E6C9

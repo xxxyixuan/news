@@ -1,11 +1,10 @@
 <template>
-  <div ref="chartDom"></div>
+  <div ref="chartDom" class="chart-container"></div>
 </template>
 
 <script setup>
 
 import {ref, onMounted, onUnmounted, inject, nextTick} from "vue";
-
 const chartDom = ref(null);
 let chartInstance = null;
 const Echarts = inject('$echarts');
@@ -109,11 +108,21 @@ onUnmounted(() => {
   }
 });
 
+
 </script>
 
+
 <style scoped>
-div {
+.chart-container {
   width: 100%;
-  height: auto;
+  height: 400px;
+  max-width: 600px;
+  margin: auto;
+}
+
+@media (max-width: 768px) {
+  .chart-container {
+    height: 300px;
+  }
 }
 </style>

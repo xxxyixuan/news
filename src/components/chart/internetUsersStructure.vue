@@ -1,5 +1,5 @@
 <template>
-  <div ref="chartDom"></div>
+  <div ref="chartDom" class="chart-container"></div>
 </template>
 
 <script setup>
@@ -93,9 +93,16 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
-div {
-  width: 600px;
+.chart-container {
+  width: 100%;
   height: 400px;
+  max-width: 600px;
+  margin: auto;
 }
 
+@media (max-width: 768px) {
+  .chart-container {
+    height: 300px;
+  }
+}
 </style>

@@ -13,7 +13,7 @@
       <div class="chart">
         <InternetUsersSize class="canvas"/>
       </div>
-      <div class="chart chart-text">
+      <div class="chart chart-text" style="@media (max-width: 768px){height: 200px}">
         <el-text style="margin-left: 40px" class="white ">
           从2020年3月至2023年12月的图表显示，网民规模和互联网普及率均呈现出明显的增长趋势。<br/>
           尽管具体数值未给出，但可以观察到网民规模随着时间的推移而增加，互联网普及率也从较低水平稳步上升，接近80%。<br/>
@@ -79,11 +79,13 @@ import InternetUsersStructure from "@/components/chart/internetUsersStructure.vu
 
 .chart {
   height: 500px;
-  width: 35%;
+  width: 100%;
   transition: transform 0.5s ease;
   position: relative;
   left: 0;
   display: flex;
+  flex-wrap:wrap;
+  justify-content:space-around;
 }
 
 .canvas {
@@ -106,5 +108,22 @@ import InternetUsersStructure from "@/components/chart/internetUsersStructure.vu
 .white{
   color: white;
 }
+/* 媒体查询：当屏幕宽度小于或等于768px时，改变show-chart的flex-direction */
+@media (max-width: 768px) {
+  .show-chart {
+    flex-direction: column;
+  }
 
+  .chart {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .chart canvas{
+    padding-right: 10px; /* 减少右侧内边距 */
+  }
+  .chart-text {
+    margin-left: 0;
+    padding-left: 10px; /* 减少左侧内边距 */
+  }
+}
 </style>
