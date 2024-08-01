@@ -144,21 +144,10 @@ const scrollTo = (id) => {
   filter: blur(2px);
 }
 
-
-.el-menu.el-menu--horizontal .el-menu-item {
-  flex: 1; /* 让每个菜单项平均分配空间 */
-  text-align: center; /* 使文本在菜单项中居中显示 */
-}
-
-/* 如果需要让菜单项填充整个高度，可以给 .title-box 添加以下样式 */
 .title-box {
   display: flex;
   flex-direction: row;
   justify-content: space-around; /* 使菜单项均匀分布在标题栏中 */
 }
 
-/* 如果你希望菜单项之间没有间隙，可以使用以下样式 */
-.el-menu--horizontal > .el-menu-item {
-  margin: 0 auto; /* 移除菜单项之间的间隙 */
-}
 </style>
