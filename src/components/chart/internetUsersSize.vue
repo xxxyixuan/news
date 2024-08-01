@@ -67,7 +67,8 @@ onMounted(async () => {
           interval: 30000,
           position: 'left',
           axisLabel: {
-            formatter: '{value}万人'
+            formatter: '{value}万人',
+            fontSize: 12,
           },
           axisLine: {
             lineStyle: {
@@ -106,7 +107,12 @@ onMounted(async () => {
           yAxisIndex: 1,
           data: [65.5, 70.4, 73.0, 75.6, 77.5]
         }],
-        position: {top: 50}
+        position: {top: 50},
+        grid:{
+
+          bottom: '15%', // 下边界
+          containLabel: true, // 确保Y轴标签不会超出图表边界
+        }
       };
       chartInstance.setOption(option);
 
@@ -123,17 +129,10 @@ onUnmounted(() => {
 
 
 <style scoped>
-
 .chart-container {
-  width: 100%;
-  height: 400px;
-  max-width: 600px;
-  margin: auto;
+  min-width: 600px;
+  min-height: 400px;
+  margin: 0 auto;
 }
 
-@media (max-width: 768px) {
-  .chart-container {
-    height: 300px;
-  }
-}
 </style>

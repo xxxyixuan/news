@@ -1,8 +1,8 @@
 <template>
 
-  <div class="page">
-    <div class="text-check text-align-center">
-      <h1 style="margin-top: 60px">四、农村女性自媒体助力三农发展</h1>
+  <div class="flex-box">
+    <div class="text-box">
+      <h1 >四、农村女性自媒体助力三农发展</h1>
       <h2>1、 农村生活经验分享</h2>
       <img src="../assets/picture/经验分享.jpg" alt="农村经验分享"/>
       <p>农村女性自媒体主体通过自媒体平台分享自己的农村生活经验，帮助其他农村用户解决生活问题，提高生活质量。例如，一些农村女性自媒体主体通过分享种植技巧、养殖经验等，帮助农民提高农业生产效益，增加收入
@@ -24,24 +24,28 @@
 </script>
 
 <style scoped>
-.page {
+.flex-box{
   display: flex;
-  min-height: 20vh;
-  overflow: hidden;
-  width: 100%;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  overflow-y: auto; /* 允许垂直滚动 */
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: left;
 }
+.text-box {
+  margin-top: 1em;
+  margin-left: 2em;
 
-.text-check {
-  width: 70%;
-  text-align: left;
-}
+  p {
+    display: flex;
+    flex-direction: row;
+    margin-left: 1em;
+  }
 
-.text-align-center {
-  text-align: center;
+  h1 {
+    margin: 0 0 1em -1em
+  }
+  h2{
+    margin: 0 0 1em -.6em
+  }
 }
 
 </style>

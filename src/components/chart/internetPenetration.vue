@@ -5,6 +5,7 @@
 <script setup>
 
 import {ref, onMounted, onUnmounted, inject, nextTick} from "vue";
+
 const chartDom = ref(null);
 let chartInstance = null;
 const Echarts = inject('$echarts');
@@ -40,9 +41,9 @@ onMounted(async () => {
     },
     xAxis: {
       data: ['2020年3月', '2020年12月', '2021年12月', '2022年12月', '2023年12月'],
-      axisLine:{
+      axisLine: {
         lineStyle: {
-          color : '#212121'
+          color: '#212121'
         }
       }
     },
@@ -96,6 +97,12 @@ onMounted(async () => {
         formatter: (param) => {
           return param.value.toFixed(2) + '%';
         },
+      },
+      position: {top: 50},
+      grid: {
+
+        bottom: '15%', // 下边界
+        containLabel: true, // 确保Y轴标签不会超出图表边界
       }
     }]
 
@@ -114,15 +121,9 @@ onUnmounted(() => {
 
 <style scoped>
 .chart-container {
-  width: 100%;
-  height: 400px;
-  max-width: 600px;
-  margin: auto;
+  min-width: 600px;
+  min-height: 400px;
+  margin: 0 auto;
 }
 
-@media (max-width: 768px) {
-  .chart-container {
-    height: 300px;
-  }
-}
 </style>

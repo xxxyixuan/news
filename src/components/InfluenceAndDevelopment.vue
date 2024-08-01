@@ -4,10 +4,10 @@
 
 <template>
 
-  <div class="page">
-    <div class="text-check text-align-center">
-      <h1 style="margin-top: 60px">三、互联网对基层农村女性自身影响和发展</h1>
-      <h4>——农村女性在互联网上活跃的过程中给她们带来了什么</h4>
+  <div class="flex-box">
+    <div class="text-box">
+      <h1>三、互联网对基层农村女性自身影响和发展</h1>
+      <h4 style="margin-left: 4em;margin-bottom: 10px">——农村女性在互联网上活跃的过程中给她们带来了什么</h4>
       <h2>1.由无声边缘化到有声主动化的转变</h2>
       <p><strong>日常生活的网络呈现</strong> ：乡村女性通过网络平台展示他们的日常生活，包括农耕家务，手工艺等传统乡村活动，这些内容不仅为城市观众提供了一种新鲜和真实的乡村生活体验，
         也为乡村女性自身赢得了认可和尊重他们的日常生活记录在网络空间中构建了一种新的社会可见性，有助于打破城乡之间的信息壁垒，促进了文化和生活经验的交流
@@ -24,40 +24,52 @@
       </p>
       <h2>3.摆脱社会规训和被构建的状态</h2>
       <p>摆脱社会规训，通过网络新媒体平台以顽强的生命力出现在大众视野，展示农村女性的智慧与力量
-        <hr/>
-        <b>
-          2024年开年一首大东北我的家乡DJ版席卷了年轻人的抖音页面，带红这首歌的是一位40多岁的东北女人，因拍摄东北农村生活而走红，一年圈粉1,800万，
-          在抖音，他的名字叫东北雨姐，一个扛起半身猪，扛起半人高的铜火锅，徒手给白菜焯水，在冰水里捞咸菜，以上这些都是东北雨姐的日常。
-          网友们形容他好像母系氏族女战士，感觉跟着他不会饿死他拥有着当代年轻人最羡慕的特质高能量，
-          于是东北雨姐成了当代脆皮年轻人的赛博鸡血，听着雨姐大喊佩斯点火，期待着自己也能弹射落地，开始带派生活。透过雨姐的身影，农村女性在生产劳动上的价值被重新正视。
-        </b>
       </p>
+      <div class="D_line" style="margin-left: 30px;margin-right: 50px"/>
+      <b>
+        2024年开年一首大东北我的家乡DJ版席卷了年轻人的抖音页面，带红这首歌的是一位40多岁的东北女人，因拍摄东北农村生活而走红，一年圈粉1,800万，
+        在抖音，他的名字叫东北雨姐，一个扛起半身猪，扛起半人高的铜火锅，徒手给白菜焯水，在冰水里捞咸菜，以上这些都是东北雨姐的日常。
+        网友们形容他好像母系氏族女战士，感觉跟着他不会饿死他拥有着当代年轻人最羡慕的特质高能量，
+        于是东北雨姐成了当代脆皮年轻人的赛博鸡血，听着雨姐大喊佩斯点火，期待着自己也能弹射落地，开始带派生活。透过雨姐的身影，农村女性在生产劳动上的价值被重新正视。
+      </b>
+
     </div>
   </div>
 </template>
 
 <style scoped>
-
-
-.page {
+.flex-box {
   display: flex;
-  min-height: 20vh;
-  overflow: hidden;
-  width: 100%;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: left;
   align-items: center;
-  justify-content: space-between;
-  overflow-y: auto; /* 允许垂直滚动 */
 }
 
-.text-check {
-  width: 70%;
-  text-align: left;
+.text-box {
+  margin-top: 1em;
+  margin-left: 2em;
+  p {
+    display: flex;
+    flex-direction: row;
+    margin-left: 1em;
+  }
+
+  h1 {
+    margin: 0 0 1em -1em
+  }
+  h2{
+    margin: 0 0 1em -.6em
+  }
 }
 
-.text-align-center {
-  text-align: center;
+.D_line {
+  width: 100%;
+  height: auto;
+  margin: 30px 0;
+  border: none;
+  border-top: 2px solid #0056b3; /* 分割线颜色 */
+  filter: blur(2px);
 }
-
 
 </style>

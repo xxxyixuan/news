@@ -1,12 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
-    background-color: rgba(168,210,134,0.9);
-    color: #FFFFFF;
+    background-color: rgba(168, 210, 134, 0.9);
+    color: #000;
     font-family: Arial, sans-serif;
 }
 
-h1,h2,h3,h4,h5,h6{
-    color: #212121;
+h1, h2, h3, h4, h5, h6 {
+    color: #0056b3;
+}
+p{
+    font-size: 1em; /* 段落文字大小 */
+    margin-bottom: 1em; /* 段落之间的间距 */
 }
 
 a {
@@ -18,23 +28,6 @@ a:hover {
     color: #ADFFD9; /* 交互色 */
 }
 
-.chart-container {
-    width: 100%;
-    height: 400px;
-    max-width: 600px;
-    margin: auto;
-}
-
-@media (max-width: 768px) {
-    .chart-container {
-        width: 300px;
-        height: 300px;
-    }
-}
-img{
-    width: 100%;
-    height: auto;
-}
 /*
     BGC         #388E3C
     bgc         #C8E6C9

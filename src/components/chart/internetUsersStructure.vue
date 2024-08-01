@@ -22,17 +22,16 @@ onMounted(async () => {
         color: '#0044ff',
       },
     },
-    tooltip: {
-    },
+    tooltip: {},
     legend: {
       data: ['城镇网民', '乡村网民'],
       top: 'bottom'
     },
     xAxis: {
       data: ['2022年12月', '2023年12月'],
-      axisLine:{
+      axisLine: {
         lineStyle: {
-          color : '#212121'
+          color: '#212121'
         }
       }
     },
@@ -79,6 +78,11 @@ onMounted(async () => {
           },
           color: '#000',
         },
+        position: {top: 50},
+        grid: {
+          bottom: '15%', // 下边界
+          containLabel: true, // 确保Y轴标签不会超出图表边界
+        }
       }
     ]
   };
@@ -94,16 +98,9 @@ onUnmounted(() => {
 
 <style scoped>
 .chart-container {
-  width: 100%;
-  height: 400px;
-  max-width: 600px;
-  margin: auto;
+  min-width: 600px;
+  min-height: 400px;
+  margin: 0 auto;
 }
 
-@media (max-width: 768px) {
-  .chart-container {
-    width: 300px;
-    height: 300px;
-  }
-}
 </style>

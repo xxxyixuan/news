@@ -3,39 +3,16 @@
 </script>
 
 <template>
-  <div id="page-1" class="bgC" >
-    <img src="../assets/picture/bg.jpg"  class="bgIMG" alt="背景图"/>
-  </div>
+  <img class="cover" src="../assets/picture/bg.jpg" alt="背景图"/>
 </template>
 
 <style scoped>
-#page-1 {
-  display: flex;
-  min-height: 80vh;
-  overflow: hidden;
+.cover {
   width: 100%;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+  height: 1080px;
+  clip: rect( 0 0 100px 100px);
 }
 
-.bgIMG {
-  width: 100%;
-  height: 80%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-.bgC {
-  width: 100%;
-  text-align:center;
-}
 </style>
-<!--
-.bgIMG {
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}-->
+
+
