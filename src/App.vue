@@ -19,6 +19,7 @@
               <el-menu-item
                   class="menu-item"
                   v-for="(item, index) in AnchorList"
+                  :class="{active:index === activeIndex}"
                   :key="index"
                   :index="index.toString()"
                   @click="scrollTo(`#anchor-${index}`)">
@@ -36,12 +37,24 @@
              :id="`anchor-${i.id}`"
         >
           <component :is="i.name"/>
-          <div  class="D_line" style="  filter: blur(1px);"/>
+          <div class="D_line" style="  filter: blur(1px);"/>
         </div>
 
       </el-main>
     </el-container>
-    <el-backtop :right="100" :bottom="100"/>
+    <el-backtop :bottom="100">
+      <div style="
+        height: 100%;
+        width: 100%;
+        background-color:rgba(255, 255, 255, 0.3);
+        box-shadow: var(--el-box-shadow-lighter);
+        text-align: center;
+        font-size: 14px;
+        color:#000;"
+      >
+        回到顶部
+      </div>
+    </el-backtop>
   </div>
 
 </template>
@@ -73,11 +86,11 @@ const AnchorList = ref(['背景', '现象', '影响和发展', '助力三农', '
 const activeIndex = ref(AnchorList.value[0]);
 
 // 滚动到指定锚点的函数
-function handleSelect(key, keyPath) {
-  console.log(key, keyPath);
+const handleSelect = (key, keyPath) => {
+  console.log(key===keyPath?'':'');
 }
 
-function scrollTo(anchorId) {
+const scrollTo = (anchorId) => {
   const element = document.querySelector(anchorId);
   if (element) {
     element.scrollIntoView({behavior: 'smooth'});

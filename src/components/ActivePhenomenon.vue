@@ -1,7 +1,7 @@
 <template>
   <div class="flex-box">
     <div class="text-box">
-      <h1>二、基层农村女性在互联网中的活跃现象</h1>
+      <h1 style="margin-top: 45px">二、基层农村女性在互联网中的活跃现象</h1>
       <p>自媒体平台用户增长迅速，根据第53次中国互联网络发展状况统计报告发布的数据</p>
       <p>截至2023年12月，我国网民规模达10.92亿人。</p>
       <p>截至2023年12月，我国农村网民规模达3.62亿人，占整体网民的29.8%。</p>
@@ -31,12 +31,12 @@
           却从来不会自怨自艾，巧妙运用自媒体实现自富，并用积极面对生活的态度感染了无数网友。</p>
       </div>
       <div class="case-image">
-        <img src="../assets/picture/群姐.png"  alt="群姐抖音账号截图"/>
+        <img src="../assets/picture/群姐.png" alt="群姐抖音账号截图"/>
       </div>
     </div>
     <div class="People-case text-box">
-      <div class="case-image">
-        <img src="../assets/picture/小英.png"  alt="小英抖音账号截图"/>
+      <div class="case-image" style="width: 60%;">
+        <img src="../assets/picture/小英.png" style="width: 90%;" alt="小英抖音账号截图"/>
       </div>
       <div class="case-text" style="margin-right: 10%">
         <h4>人物案例二：小英</h4>
@@ -53,23 +53,198 @@
     </div>
     <div class="text-box">
       <h2>2、现象分析</h2>
-      <p>
-        农村女性自媒体内容多样化，农村女性自媒体主体通过自媒体平台分享自己的农村生活、农业技术、农产品推广等内容，丰富了农村信息传播的渠道。
-      </p>
-      <p>
-        <span>根据调研数据显示，农村女性自媒体主体的内容主要包括农村生活经验分享、农产品推广、农业技术指导等，其中以农村生活经验分享最为受欢迎。</span>
-      </p>
-      <div>
-        <img src="../assets/picture/账号情况.png" class="img" alt="抖音账号情况"/>
-        <img src="../assets/picture/农村女性网红视频类型.png" class="img" alt="农村女性网红视频类型"/>
-      </div>
+      <p style="text-indent: 2em">农村女性自媒体内容多样化，农村女性自媒体主体通过自媒体平台分享自己</p>
+      <p>的农村生活、农业技术、农产品推广等内容，丰富了农村信息传播的渠道。</p>
+      <p style="text-indent: 2em">根据调研数据显示，农村女性自媒体主体的内容主要包括农村生活经验分享、</p>
+      <p>农产品推广、农业技术指导等，其中以农村生活经验分享最为受欢迎。</p>
+    </div>
+
+    <div class="excel-box">
+      <el-header>
+        <el-menu
+            class="menu-box"
+            mode="horizontal"
+            default-active='douyin'
+            :ellipsis="false"
+            style="width: 100%;"
+        >
+          <el-menu-item
+              class="menu-box-item"
+              index="douyin"
+              @click="showMenuExcel = 'douyin'"
+          >乡村女性代表性账号基本情况（抖音）
+          </el-menu-item>
+          <el-menu-item
+              class="menu-box-item"
+              index="kuaishou"
+              @click="showMenuExcel = 'kuaishou'"
+          >乡村女性代表性账号基本情况（快手）
+          </el-menu-item>
+        </el-menu>
+      </el-header>
+      <el-main>
+        <div class="excel-box">
+          <el-table
+              class="showExcel"
+              :data="douyinData"
+              v-if="showMenuExcel === 'douyin'"
+              stripe
+              border
+          >
+            <el-table-column type="index" label="序号" width="60px" align="center"></el-table-column>
+            <el-table-column prop="name" label="名称"></el-table-column>
+            <el-table-column prop="follower" label="粉丝数（万）"></el-table-column>
+            <el-table-column prop="age" label="年龄" width="60px" align="center"></el-table-column>
+            <el-table-column prop="address" label="地区"></el-table-column>
+            <el-table-column prop="agencies" label="是否为机构运管" align="center"></el-table-column>
+            <el-table-column prop="positioning" label="账号定位" align="center"></el-table-column>
+            <el-table-column prop="content" label="视频主要内容"></el-table-column>
+          </el-table>
+        </div>
+        <div class="excel-box">
+          <el-table
+              class="showExcel"
+              :data="kuaishouData"
+              v-if="showMenuExcel==='kuaishou'"
+              stripe
+              border
+          >
+            <el-table-column type="index" label="序号" width="60px" align="center"></el-table-column>
+            <el-table-column prop="name" label="名称"></el-table-column>
+            <el-table-column prop="follower" label="粉丝数（万）"></el-table-column>
+            <el-table-column prop="age" label="年龄" width="60px" align="center"></el-table-column>
+            <el-table-column prop="address" label="地区"></el-table-column>
+            <el-table-column prop="agencies" label="是否为机构运管" align="center"></el-table-column>
+            <el-table-column prop="positioning" label="账号定位" align="center"></el-table-column>
+            <el-table-column prop="content" label="视频主要内容"></el-table-column>
+          </el-table>
+        </div>
+
+      </el-main>
     </div>
   </div>
+
 
 </template>
 
 <script setup>
 
+import {ref} from "vue";
+
+const douyinData = [
+  {
+    name: '李子柒',
+    follower: 5483.4,
+    age: '-',
+    address: '四川绵阳',
+    agencies: '是',
+    positioning: '美食',
+    content: '美食制作，家庭生活'
+  },
+  {
+    name: '蜀中桃子姐',
+    follower: 2201.4,
+    age: '-',
+    address: '四川自贡',
+    agencies: '否',
+    positioning: '美食',
+    content: '美食制作，家庭生活'
+  },
+  {
+    name: '潘姥姥',
+    follower: 1950.4,
+    age: '63',
+    address: '安徽六安',
+    agencies: '是',
+    positioning: '美食',
+    content: '美食制作，家庭生活'
+  },
+  {
+    name: '罗姑婆',
+    follower: 655.7,
+    age: '70',
+    address: '四川成都',
+    agencies: '是',
+    positioning: '搞笑',
+    content: '情景表演，情感分享'
+  },
+  {
+    name: '三支花',
+    follower: 608.7,
+    age: '-',
+    address: '贵州遵义',
+    agencies: '是',
+    positioning: '搞笑',
+    content: '情景表演，搞怪模仿'
+  },
+  {
+    name: '乡村小乔',
+    follower: 785.5,
+    age: '29',
+    address: '江苏连云港',
+    agencies: '否',
+    positioning: '生活',
+    content: '家庭生活'
+  },
+  {
+    name: '川乡小妹儿',
+    follower: 561.2,
+    age: '28',
+    address: '四川雅安',
+    agencies: '否',
+    positioning: '美食',
+    content: '家庭生活'
+  },
+  {
+    name: '农村姑嫂百货',
+    follower: 147.8,
+    age: '32',
+    address: '河南平顶山',
+    agencies: '否',
+    positioning: '刷情',
+    content: '情景表演，搞怪模仿'
+  }
+]
+const kuaishouData = [
+  {
+    name: '农村会姐',
+    follower: 1458.5,
+    age: '38',
+    address: '河南濮阳',
+    agencies: '否',
+    positioning: '美食',
+    content: '美食制作，家庭生活'
+  },
+  {
+    name: '刘妈的日常生活',
+    follower: 1451.5,
+    age: '-',
+    address: '内蒙古通辽',
+    agencies: '是',
+    positioning: '搞笑',
+    content: '情景剧表演'
+  },
+  {
+    name: '云南小花',
+    follower: 981.5,
+    age: '26',
+    address: '云南大理',
+    agencies: '否',
+    positioning: '美食',
+    content: '扶贫带货，创意表演'
+  },
+  {
+    name: '乡野丽江娇子',
+    follower: 607.9,
+    age: '-',
+    address: '云南丽江',
+    agencies: '否',
+    positioning: '美食',
+    content: '美食制作，家庭生活、三农带货'
+  }
+]
+
+let showMenuExcel = ref('douyin')
 </script>
 
 <style scoped>
@@ -85,6 +260,7 @@
 .text-box {
   margin-top: 1em;
   margin-left: 2em;
+
   p {
     display: flex;
     flex-direction: row;
@@ -107,10 +283,16 @@
   margin: 20px 0 10px 10%;
 
   .case-text {
-    width: 50%;
+    width: 48%;
     margin: auto;
+    padding-top: 40px;
+    padding-right: 10px;
+    padding-bottom: 30px;
     line-height: 22px;
     font-size: 18px;
+    background-color: rgba(7, 7, 7, 0.2) !important;
+    border-radius: 8px; /* 添加圆角 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
     p {
       text-indent: 2em;
     }
@@ -121,13 +303,62 @@
   }
 
   .case-image {
-    width:50%;
+    width: 50%;
     margin: auto 0;
-    img{
+
+    img {
       width: 80%;
       height: auto;
     }
   }
 }
+
+.menu-box {
+  width: 1000px;
+  background-color: rgba(255, 255, 255, 0.3); /* 导航栏背景色 */
+  color: #fff; /* 导航栏文字颜色 */
+  display: flex;
+  flex-direction: row;
+
+  .menu-box-item {
+    flex-direction: row;
+    align-items: center;
+    margin: 0 auto;
+    width: auto;
+
+  }
+}
+
+
+.excel-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 800px;
+  margin: 0 auto;
+
+  .showExcel {
+    margin-bottom: 30px;
+  }
+}
+
+.excel-box /deep/ .el-table th {
+  background-color: transparent!important;
+}
+
+.excel-box /deep/ .el-table tr {
+  background-color: transparent!important;
+}
+.excel-box /deep/  .el-table--enable-row-transition .el-table__body td{
+  background-color: transparent;
+}
+.excel-box::before {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0;
+}
+
 
 </style>

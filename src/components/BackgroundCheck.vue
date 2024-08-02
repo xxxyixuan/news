@@ -16,9 +16,11 @@
           <el-menu
               class="menu-box"
               mode="horizontal"
+              default-active= '1'
               :ellipsis="false"
           >
             <el-menu-item
+                class="menu-box-item"
                 v-for="c in chartData"
                 :key="c.id"
                 :index="`${c.id}`"
@@ -122,11 +124,19 @@ const scrollTo = (id) => {
 
 
 .menu-box {
-  width: 100%;
+  width: 1000px;
   background-color: rgba(255, 255, 255, 0.3); /* 导航栏背景色 */
   color: #fff; /* 导航栏文字颜色 */
   display: flex;
   flex-direction: row;
+
+  .menu-box-item {
+    flex-direction: row;
+    align-items: center;
+    margin: 0 auto;
+    width: auto;
+
+  }
 }
 
 .chart-canvas {

@@ -98,9 +98,10 @@ onMounted(async () => {
           return param.value.toFixed(2) + '%';
         },
       },
-      position: {top: 50},
+      position: {
+        top: 50,
+      },
       grid: {
-
         bottom: '15%', // 下边界
         containLabel: true, // 确保Y轴标签不会超出图表边界
       }
@@ -121,7 +122,7 @@ onUnmounted(() => {
 
 <style scoped>
 .chart-container {
-  min-width: 600px;
+  min-width: 700px;
   min-height: 400px;
   margin: 0 auto;
 }
