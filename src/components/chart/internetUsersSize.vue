@@ -43,6 +43,7 @@ onMounted(async () => {
             });
             return res;
           },
+          position: handleTooltipPosition,
           // 可以设置tooltip的样式，例如：位置、背景色、边框色等
         },
         // 图例
@@ -105,10 +106,18 @@ onMounted(async () => {
           type: 'line',
           smooth: true,
           yAxisIndex: 1,
-          data: [65.5, 70.4, 73.0, 75.6, 77.5]
+          data: [65.5, 70.4, 73.0, 75.6, 77.5],
+          itemStyle: {
+            normal: {
+              color: '#ADFFD9', //改变折线点的颜色
+              lineStyle: {
+                color: '#0056b3' //改变折线颜色
+              }
+            }
+          }
         }],
         position: {top: 50},
-        grid:{
+        grid: {
 
           bottom: '15%', // 下边界
           containLabel: true, // 确保Y轴标签不会超出图表边界
@@ -118,6 +127,31 @@ onMounted(async () => {
 
     }
 );
+function handleTooltipPosition(point, params, dom, rect, size) {
+  const [mouseX, mouseY] = point
+  const [tooltipWidth, tooltipHeight] = size.contentSize
+
+  console.log(point, size.contentSize)
+
+  let [posX, posY] = [0, 0]; // tooltip的显示位置
+
+  // x位置判断
+  if (mouseX < tooltipWidth) {
+    // 如果左边放不下，tooltip的左侧位置=鼠标X
+    posX = mouseX;
+  } else {
+    posX = mouseX - tooltipWidth;
+  }
+
+  if (mouseY < tooltipHeight) {
+    // 如果上边放不下，tooltip的上侧位置=鼠标Y
+    posY = mouseY;
+  } else {
+    posY = mouseY - tooltipHeight;
+  }
+
+  return [posX, posY];
+}
 
 onUnmounted(() => {
   if (chartInstance !== null && chartInstance.dispose) {

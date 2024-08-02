@@ -52,6 +52,8 @@ import {markRaw, ref} from "vue";
 import InternetUsersSize from "@/components/chart/internetUsersSize.vue";
 import InternetPenetration from "@/components/chart/internetPenetration.vue";
 import InternetUsersStructure from "@/components/chart/internetUsersStructure.vue";
+import InternetIndustryTOP10 from "@/components/chart/internetIndustryTOP10.vue";
+import InternetPermeabilityIndustryTOP10 from "@/components/chart/internetPermeabilityIndustryTOP10.vue";
 
 const Size_text = '            <p>从2020年3月至2023年12月的图表显示，网民规模和互联网普及率均呈现出明显的增长趋势。</p>\n' +
     '            <p>尽管具体数值未给出，但可以观察到网民规模随着时间的推移而增加，互联网普及率也从较低水平稳步上升，接近80%。</p>\n' +
@@ -63,11 +65,14 @@ const Penetration_text = '<p>从2020年3月至2023年12月，城乡地区的互�
 const Structure_text = '<p>从2022年12月到2023年12月，中国网民的城乡结构发生了变化。2022年12月时，城镇网民占网民总数的比例为71.10%，而乡村网民占29.80%。</p>\n' +
     '<p>到了2023年12月，城镇网民的比例略有下降至70.20%，乡村网民的比例则上升至29.80%。</p>\n' +
     '<p>这表明虽然城镇网民依然占据了网民总数的大部分，但乡村网民的比例在一年内保持稳定，显示出城乡网民结构的相对平衡。</p>';
-
+const Industry_text = '<p>数字经济发展驱动下，女性用户在购物消费、生活及娱乐等领域渗透进一步提升，综合电商、网上银行等六大行净增量均超五千万</p>';
+const Permeability_text='<p>女性用户对泛娱乐应用表现出明显的偏好，尤其是在短视频领域，月人均使用时长已达56小时，且依然持续增长中</p>';
 const chartData = [
   {id: 1, name: '网民规模和互联网普及率', chart: markRaw(InternetUsersSize), text: Size_text},
   {id: 2, name: '城乡地区互联网普及率', chart: markRaw(InternetPenetration), text: Penetration_text},
   {id: 3, name: '网民城乡结构', chart: markRaw(InternetUsersStructure), text: Structure_text},
+  {id:4,name:'增长TOP10',chart: markRaw(InternetIndustryTOP10),text: Industry_text},
+  {id:5,name:'渗透率TOP10',chart: markRaw(InternetPermeabilityIndustryTOP10),text: Permeability_text}
 ];
 
 // 当前导航项

@@ -68,6 +68,7 @@ import ActivePhenomenon from "@/components/ActivePhenomenon.vue";
 import InfluenceAndDevelopment from "@/components/InfluenceAndDevelopment.vue";
 import Development3A from "@/components/Development3A.vue";
 import Summarize from "@/components/summarize.vue";
+import InternetIndustryTOP10 from "@/components/chart/internetIndustryTOP10.vue";
 
 /*动态组件*/
 

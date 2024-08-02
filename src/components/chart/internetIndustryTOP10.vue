@@ -19,7 +19,7 @@ onMounted(async () => {
     animationEasing: 'elasticOut',
     animationDuration: 2000,
     title: {
-      text: '城乡地区互联网普及率',
+      text: '2022年1月女性用户移动互联网行业增长TOP10',
       left: 'center',
       textStyle: {
         color: '#0044ff',
@@ -27,79 +27,81 @@ onMounted(async () => {
     },
     tooltip: {
       trigger: 'axis',
-      formatter: function (params) {
-        let relVal = params[0].name;
-        for (let i = 0; i < params.length; i++) {
-          relVal += '<br/>' + params[i].marker + params[i].seriesName + " : " + params[i].value + '%';
-        }
-        return relVal;
+      axisPointer: {
+        type: 'shadow',
       },
       position: handleTooltipPosition,
     },
     legend: {
-      data: ['城镇互联网普及率', '乡村互联网普及率'],
-      top: 'bottom'
+      date: ['净增量', '月活越用户规模'],
+      top: 'bottom',
     },
-    xAxis: {
-      data: ['2020年3月', '2020年12月', '2021年12月', '2022年12月', '2023年12月'],
+    xAxis:{
+      data: ['综合电商', '网上银行', '支付结算', '地图导航', '本地生活', '短视频', '智能家居', '综合资讯', '搜索下载', '有声听书',],
       axisLine: {
         lineStyle: {
           color: '#212121'
         }
       }
     },
-    yAxis: [{
-      type: 'value',
-      name: '普及率',
-      show: true,
-      min: 30,
-      max: 90,
-      interval: 10,
-      position: 'left',
-      axisLabel: {
-        formatter: '{value}%'
+    yAxis:  [
+      {
+        type: 'value',
+        name: '单位：万',
+        min: 0,
+        max:8000,
+        interval: 2000,
+        show: true,
+        position: 'left',
+        axisLine: {
+          lineStyle: {
+            color: '#212121',
+            width: 2
+          }
+        }
       },
-      axisLine: {
-        lineStyle: {
-          color: '#212121',
-          width: 2
+      {
+        type: 'value',
+        name: '单位：万',
+        min: 0,
+        max:80000,
+        interval: 20000,
+        position: 'right',
+        show: true,
+        axisLine: {
+          lineStyle: {
+            color: '#212121',
+            width: 2
+          }
         }
       }
-    }],
-    series: [{
-      data: [76.50, 79.80, 81.30, 83.10, 83.30],
-      type: 'line',
-      name: '城镇互联网普及率',
-      label: {
-        show: true,
-        position: 'top',
-        formatter: (param) => {
-          return param.value.toFixed(2) + '%';
-        },
-      }
-    }, {
-      data: [46.20, 55.90, 57.60, 61.90, 66.50],
-      type: 'line',
-      name: '乡村互联网普及率',
-      label: {
-        show: true,
-        position: 'top',
-        formatter: (param) => {
-          return param.value.toFixed(2) + '%';
-        },
-      },
-      position: {
-        top: 50,
-      },
-      grid: {
-        bottom: '15%', // 下边界
-        containLabel: true, // 确保Y轴标签不会超出图表边界
-      }
-    }]
+    ],
 
+    series: [{
+      name: '净增量',
+      type: 'bar',
+      barWidth: '20%',
+      yAxisIndex: 0,
+      data: [6970, 6646, 5768, 5739, 5243, 5070, 3357, 2753, 2295, 2282]
+    },
+      {
+        name: '月活跃用户规模',
+        type: 'bar',
+        barWidth: '20%',
+        yAxisIndex: 1,
+        data: [56513, 29646, 44644, 44035, 23195, 50989, 7837, 34037, 31965, 2886]
+      }
+    ],
+    position: {top: 50},
+    grid: {
+
+      bottom: '15%', // 下边界
+      containLabel: true, // 确保Y轴标签不会超出图表边界
+    }
   };
   chartInstance.setOption(option);
 });
+
 
 function handleTooltipPosition(point, params, dom, rect, size) {
   const [mouseX, mouseY] = point
@@ -135,11 +137,10 @@ onUnmounted(() => {
 
 
 </script>
-
-
 <style scoped>
+
 .chart-container {
-  min-width: 700px;
+  min-width: 600px;
   min-height: 400px;
   margin: 0 auto;
 }
