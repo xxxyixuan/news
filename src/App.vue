@@ -1,7 +1,9 @@
 <template>
 
   <div class="common-layout">
+
     <MainApp/>
+    <KeywordsScroll/>
 
     <el-container>
       <el-header height="auto" style="padding: 0;">
@@ -13,7 +15,6 @@
                 class="el-menu-demo"
                 mode="horizontal"
                 :ellipsis="false"
-                @select="handleSelect"
             >
               <!-- 使用v-for循环AnchorList数组 -->
               <el-menu-item
@@ -39,7 +40,7 @@
           <component :is="i.name"/>
           <div class="D_line" style="  filter: blur(1px);"/>
         </div>
-
+        <End/>
       </el-main>
     </el-container>
     <el-backtop :bottom="100">
@@ -56,7 +57,6 @@
       </div>
     </el-backtop>
   </div>
-
 </template>
 
 <script setup>
@@ -68,10 +68,10 @@ import ActivePhenomenon from "@/components/ActivePhenomenon.vue";
 import InfluenceAndDevelopment from "@/components/InfluenceAndDevelopment.vue";
 import Development3A from "@/components/Development3A.vue";
 import Summarize from "@/components/summarize.vue";
-import InternetIndustryTOP10 from "@/components/chart/internetIndustryTOP10.vue";
+import KeywordsScroll from "@/components/KeywordsScroll.vue";
+import End from "@/components/End.vue";
 
 /*动态组件*/
-
 const componentNames = [
   {id: 0, name: markRaw(BackgroundCheck)},
   {id: 1, name: markRaw(ActivePhenomenon)},
@@ -86,17 +86,20 @@ const AnchorList = ref(['背景', '现象', '影响和发展', '助力三农', '
 // 默认选中的菜单项索引，基于AnchorList数组的第一个元素
 const activeIndex = ref(AnchorList.value[0]);
 
-// 滚动到指定锚点的函数
-const handleSelect = (key, keyPath) => {
-  console.log(key===keyPath?'':'');
-}
-
 const scrollTo = (anchorId) => {
   const element = document.querySelector(anchorId);
   if (element) {
     element.scrollIntoView({behavior: 'smooth'});
   }
 }
+
+window.addEventListener('resize', () => {
+  const header = document.querySelector('.nav-bar');
+  header.style.width = window.innerWidth + 'px';
+});
+
+
+
 </script>
 
 <style scoped>

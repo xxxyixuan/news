@@ -24,6 +24,7 @@ onMounted(async () => {
         title: {
           text: '2022年1月女性用户在泛娱乐典型行业APP渗透率TOP10',
           left: 'center',
+          subtext:'来源；QuestMobileGROWTH用户画像标签数据库2022年1月',
           textStyle: {
             color: '#0044ff',
           }
@@ -128,7 +129,6 @@ function handleTooltipPosition(point, params, dom, rect, size) {
   const [mouseX, mouseY] = point
   const [tooltipWidth, tooltipHeight] = size.contentSize
 
-  console.log(point, size.contentSize)
 
   let [posX, posY] = [0, 0]; // tooltip的显示位置
 

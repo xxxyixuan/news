@@ -21,6 +21,7 @@ onMounted(async () => {
     title: {
       text: '城乡地区互联网普及率',
       left: 'center',
+      subtext:'来源：中国互联网络发展状况统计调查',
       textStyle: {
         color: '#0044ff',
       },
@@ -38,7 +39,10 @@ onMounted(async () => {
     },
     legend: {
       data: ['城镇互联网普及率', '乡村互联网普及率'],
-      top: 'bottom'
+      top: 'bottom',
+      textStyle: {
+        color:'#212121',
+      }
     },
     xAxis: {
       data: ['2020年3月', '2020年12月', '2021年12月', '2022年12月', '2023年12月'],
@@ -105,7 +109,6 @@ function handleTooltipPosition(point, params, dom, rect, size) {
   const [mouseX, mouseY] = point
   const [tooltipWidth, tooltipHeight] = size.contentSize
 
-  console.log(point, size.contentSize)
 
   let [posX, posY] = [0, 0]; // tooltip的显示位置
 

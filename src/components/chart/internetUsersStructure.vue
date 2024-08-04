@@ -18,6 +18,7 @@ onMounted(async () => {
     title: {
       text: '网民城乡结构',
       left: 'center',
+      subtext:'来源：中国互联网络发展状况统计调查',
       textStyle: {
         color: '#0044ff',
       },

@@ -21,6 +21,7 @@ onMounted(async () => {
     title: {
       text: '2022年1月女性用户移动互联网行业增长TOP10',
       left: 'center',
+      subtext: '来源：QuestMobileGROWTH用户画像标签数据库2022年1月',
       textStyle: {
         color: '#0044ff',
       },
@@ -36,7 +37,7 @@ onMounted(async () => {
       date: ['净增量', '月活越用户规模'],
       top: 'bottom',
     },
-    xAxis:{
+    xAxis: {
       data: ['综合电商', '网上银行', '支付结算', '地图导航', '本地生活', '短视频', '智能家居', '综合资讯', '搜索下载', '有声听书',],
       axisLine: {
         lineStyle: {
@@ -44,12 +45,12 @@ onMounted(async () => {
         }
       }
     },
-    yAxis:  [
+    yAxis: [
       {
         type: 'value',
         name: '单位：万',
         min: 0,
-        max:8000,
+        max: 8000,
         interval: 2000,
         show: true,
         position: 'left',
@@ -64,7 +65,7 @@ onMounted(async () => {
         type: 'value',
         name: '单位：万',
         min: 0,
-        max:80000,
+        max: 80000,
         interval: 20000,
         position: 'right',
         show: true,
@@ -107,7 +108,6 @@ function handleTooltipPosition(point, params, dom, rect, size) {
   const [mouseX, mouseY] = point
   const [tooltipWidth, tooltipHeight] = size.contentSize
 
-  console.log(point, size.contentSize)
 
   let [posX, posY] = [0, 0]; // tooltip的显示位置
 

@@ -341,18 +341,9 @@ let showMenuExcel = ref('douyin')
   .showExcel {
     margin-bottom: 30px;
   }
+
 }
 
-.excel-box /deep/ .el-table th {
-  background-color: transparent!important;
-}
-
-.excel-box /deep/ .el-table tr {
-  background-color: transparent!important;
-}
-.excel-box /deep/  .el-table--enable-row-transition .el-table__body td{
-  background-color: transparent;
-}
 .excel-box::before {
   left: 0;
   bottom: 0;

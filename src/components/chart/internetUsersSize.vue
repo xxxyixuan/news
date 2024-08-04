@@ -19,9 +19,11 @@ onMounted(async () => {
         },
         title: {
           text: '2020.3-2023.12 网民规模和互联网普及率',
-          left: 'center',
+
+          subtext:'来源：中国互联网络发展状况统计调查',
           textStyle: {
             color: '#0044ff',
+
           },
         },
         // 提示
@@ -108,11 +110,9 @@ onMounted(async () => {
           yAxisIndex: 1,
           data: [65.5, 70.4, 73.0, 75.6, 77.5],
           itemStyle: {
-            normal: {
               color: '#ADFFD9', //改变折线点的颜色
               lineStyle: {
                 color: '#0056b3' //改变折线颜色
-              }
             }
           }
         }],
@@ -130,8 +130,6 @@ onMounted(async () => {
 function handleTooltipPosition(point, params, dom, rect, size) {
   const [mouseX, mouseY] = point
   const [tooltipWidth, tooltipHeight] = size.contentSize
-
-  console.log(point, size.contentSize)
 
   let [posX, posY] = [0, 0]; // tooltip的显示位置
 
