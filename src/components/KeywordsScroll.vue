@@ -1,6 +1,6 @@
 <template>
   <div class="flex-box">
-    <img src="../assets/picture/剪影.png" alt="农村女性剪影" class="float-image"/>
+    <img rel="preload"  src="../assets/picture/剪影.png" alt="农村女性剪影" class="float-image"/>
 
     <div class="container" style="--t:10s">
       <div>

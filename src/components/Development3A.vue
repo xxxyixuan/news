@@ -9,7 +9,7 @@
         农村女性自媒体助力三农</p>
       <div class="show-exp-box">
         <div class="exp-img">
-          <img class="e-i-img" src="../assets/picture/蜀中桃子姐.jpg" alt="蜀中桃子姐"/>
+          <img class="e-i-img"  rel="preload" src="../assets/picture/蜀中桃子姐.jpg" alt="蜀中桃子姐"/>
         </div>
         <div class="text-box" style="margin-left: 5px">
           <h3>蜀中桃子姐</h3>
@@ -27,7 +27,7 @@
       <h2>2、 农产品推广</h2>
       <div class="People-case text-box">
         <div class="case-image">
-          <img src="../assets/picture/李云溪.png" alt="李云溪抖音账号截图"/>
+          <img rel="preload"  src="../assets/picture/李云溪.png" alt="李云溪抖音账号截图"/>
         </div>
         <div class="case-text" style="margin-right: 10%">
           <p>农村女性自媒体主体通过自媒体平台推广农产品，帮助农民销售农产品，提高农民收入。根据调研数据显示，一些农村女性自媒体主体通过自媒体平台推广农产品，销售额增长了30%以上，为农民带来了可观的经济收益。

@@ -31,12 +31,12 @@
           却从来不会自怨自艾，巧妙运用自媒体实现自富，并用积极面对生活的态度感染了无数网友。</p>
       </div>
       <div class="case-image">
-        <img src="../assets/picture/群姐.png" alt="群姐抖音账号截图"/>
+        <img rel="preload" src="../assets/picture/群姐.png" alt="群姐抖音账号截图"/>
       </div>
     </div>
     <div class="People-case text-box">
       <div class="case-image" style="width: 60%;">
-        <img src="../assets/picture/小英.png" style="width: 90%;" alt="小英抖音账号截图"/>
+        <img rel="preload"  src="../assets/picture/小英.png" style="width: 90%;" alt="小英抖音账号截图"/>
       </div>
       <div class="case-text" style="margin-right: 10%">
         <h4>人物案例二：小英</h4>
