@@ -143,7 +143,8 @@ onUnmounted(() => {
 
 <style scoped>
 .chart-container {
-  min-width: 700px;
+  max-width: 50vw;
+  min-width: 30vw;
   min-height: 400px;
   margin: 0 auto;
 }
