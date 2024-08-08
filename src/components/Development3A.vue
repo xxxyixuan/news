@@ -7,27 +7,31 @@
       <p>农村女性自媒体主体通过自媒体平台分享自己的农村生活经验，帮助其他农村用户解决生活问题，提高生活质量。</p>
       <p>例如，一些农村女性自媒体主体通过分享种植技巧、养殖经验等，帮助农民提高农业生产效益，增加收入
         农村女性自媒体助力三农</p>
-      <div class="show-exp-box">
-        <div class="exp-img">
-          <img class="e-i-img"  rel="preload" src="../assets/picture/蜀中桃子姐.jpg" alt="蜀中桃子姐"/>
-        </div>
-        <div class="text-box" style="margin-left: 5px">
-          <h3>蜀中桃子姐</h3>
-          <p>桃子姐的“她”力量:没有止步于带货，更要反哺乡土，为家乡献出自己的一份力。</p>
-          <p>
-            蜀中桃子姐火了以后，一年粉丝增长3500万，成为中国十大乡村视频博主，一年可销2亿以上，带动了荣县经济发展，小乡村变成奔富村。为两百余人提供就业机会。
-          </p>
-          <p>
-            5000余农户种植大头菜2万亩。40多款农特产品年销售200万袋。也带动了我们当地的一些妇女同胞就业发展。以我微光，筑家乡之荣光。
-          </p>
-        </div>
+    </div>
+
+
+    <div class="show-exp-box">
+      <div class="exp-img">
+        <img class="e-i-img" rel="preload" src="../assets/picture/蜀中桃子姐.jpg" alt="蜀中桃子姐"/>
+      </div>
+      <div class="text-box" style="margin-left: 5px">
+        <h3>蜀中桃子姐</h3>
+        <p>桃子姐的“她”力量:没有止步于带货，更要反哺乡土，为家乡献出自己的一份力。</p>
+        <p>
+          蜀中桃子姐火了以后，一年粉丝增长3500万，成为中国十大乡村视频博主，一年可销2亿以上，带动了荣县经济发展，小乡村变成奔富村。为两百余人提供就业机会。
+        </p>
+        <p>
+          5000余农户种植大头菜2万亩。40多款农特产品年销售200万袋。也带动了我们当地的一些妇女同胞就业发展。以我微光，筑家乡之荣光。
+        </p>
       </div>
     </div>
+
+
     <div>
       <h2>2、 农产品推广</h2>
       <div class="People-case text-box">
         <div class="case-image">
-          <img rel="preload"  src="../assets/picture/李云溪.png" alt="李云溪抖音账号截图"/>
+          <img rel="preload" src="../assets/picture/李云溪.png" alt="李云溪抖音账号截图"/>
         </div>
         <div class="case-text" style="margin-right: 10%">
           <p>农村女性自媒体主体通过自媒体平台推广农产品，帮助农民销售农产品，提高农民收入。根据调研数据显示，一些农村女性自媒体主体通过自媒体平台推广农产品，销售额增长了30%以上，为农民带来了可观的经济收益。
@@ -40,12 +44,7 @@
           </p>
         </div>
       </div>
-
-
-      <!--      <img src="../assets/picture/李云溪.png" height="404" width="554" alt="李云溪"/>-->
     </div>
-
-
   </div>
 </template>
 <script setup>
@@ -61,13 +60,16 @@
 }
 
 .text-box {
-  margin-top: 1em;
-  margin-left: 2em;
+
+  margin: 1rem auto auto 2em;
 
   p {
     display: flex;
     flex-direction: row;
-    margin-left: 1em;
+    margin-left: 5px;
+    margin-right: 5px;
+    text-indent: 2em;
+    word-wrap: break-word;
   }
 
   h1 {
@@ -86,7 +88,7 @@
   border-radius: 8px; /* 添加圆角 */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
   float: right;
-  margin-right: 20%;
+  margin: 0 20% 0 auto;
 
   .exp-img {
     float: right;
@@ -120,12 +122,11 @@
     margin: auto;
     line-height: 22px;
     font-size: 18px;
-    padding-top: 40px;
-    padding-right: 10px;
-    padding-bottom: 30px;
+    padding: 40px 10px 30px 0;
     background-color: rgba(7, 7, 7, 0.2) !important;
     border-radius: 8px; /* 添加圆角 */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
+
     p {
       text-indent: 2em;
     }
@@ -144,5 +145,49 @@
       height: auto;
     }
   }
+}
+
+@media screen and (max-width: 430px) {
+  .People-case {
+    display: flex;
+    flex-direction: column;
+
+    .case-image {
+      width: 100%;
+      height: auto;
+      margin: 0 0 10px;
+
+      img {
+        width: 90%;
+      }
+    }
+
+    .case-text {
+      width: 90%;
+      margin: 0 0 10px;
+      padding: 0;
+
+      p {
+        margin: 7px;
+      }
+
+      h4 {
+        padding: 0;
+        margin-left: 1em;
+      }
+    }
+
+  }
+
+  .show-exp-box {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+
+    .exp-img {
+      width: 50%;
+    }
+  }
+
 }
 </style>

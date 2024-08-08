@@ -19,12 +19,14 @@ onMounted(async () => {
         },
         title: {
           text: '2020.3-2023.12 网民规模和互联网普及率',
-
           subtext:'来源：中国互联网络发展状况统计调查',
+          left: 'center',
+          x: 'center',
           textStyle: {
             color: '#0044ff',
-
+            width:'60%',
           },
+
         },
         // 提示
         tooltip: {
@@ -113,12 +115,13 @@ onMounted(async () => {
               color: '#ADFFD9', //改变折线点的颜色
               lineStyle: {
                 color: '#0056b3' //改变折线颜色
-            }
-          }
-        }],
-        position: {top: 50},
-        grid: {
+            },
+          },
 
+        }],
+        position: {top: '10%'},
+        grid: {
+          top:'30%',
           bottom: '15%', // 下边界
           containLabel: true, // 确保Y轴标签不会超出图表边界
         }
@@ -167,4 +170,11 @@ onUnmounted(() => {
   margin: 0 auto;
 }
 
+@media screen and (max-width: 430px) {
+  .chart-container {
+    min-width: 80vw;
+    min-height: 267px;
+    margin: auto;
+  }
+}
 </style>

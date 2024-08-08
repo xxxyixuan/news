@@ -96,6 +96,7 @@ onMounted(async () => {
         top: 50,
       },
       grid: {
+        top:'30%',
         bottom: '15%', // 下边界
         containLabel: true, // 确保Y轴标签不会超出图表边界
       }
@@ -146,5 +147,11 @@ onUnmounted(() => {
   min-height: 400px;
   margin: 0 auto;
 }
-
+@media screen and (max-width: 430px) {
+  .chart-container {
+    min-width: 80vw;
+    min-height: 267px;
+    margin: auto;
+  }
+}
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div class="flex-box">
-    <img rel="preload"  src="../assets/picture/剪影.png" alt="农村女性剪影" class="float-image"/>
+    <img rel="preload" src="../assets/picture/剪影.png" alt="农村女性剪影" class="float-image"/>
 
     <div class="container" style="--t:10s">
       <div>
@@ -132,12 +132,12 @@
   justify-content: center;
   align-items: center;
   font-family: 'Poppins', sans-serif;
-  min-height: 700px;
+  min-height: 430px;
   width: 100%;
 }
 
 .float-image {
-  width: 300px;
+  width: 350px;
   height: auto;
   position: absolute; /* 使图片脱离文档流，可以覆盖到文字之上 */
   z-index: 100; /* 确保图片在所有文字之上 */
@@ -147,7 +147,7 @@
   z-index: 0; /* 确保文字在图片之下 */
   position: relative;
   display: flex;
-  width: 700px;
+  width: 50%;
   margin-bottom: 38px;
   overflow: hidden;
   mask-image: linear-gradient(
@@ -193,5 +193,9 @@
   }
 }
 
-
+@media screen and (max-width: 430px){
+  .container{
+    width: 100%;
+  }
+}
 </style>

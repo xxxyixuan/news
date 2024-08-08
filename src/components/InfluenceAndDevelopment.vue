@@ -7,7 +7,7 @@
   <div class="flex-box">
     <div class="text-box">
       <h1 style="margin-top: 45px">三、互联网对基层农村女性自身影响和发展</h1>
-      <h4 style="margin-left: 4em;margin-bottom: 10px">——农村女性在互联网上活跃的过程中给她们带来了什么</h4>
+      <h4>——农村女性在互联网上活跃的过程中给她们带来了什么</h4>
       <h2>1.由无声边缘化到有声主动化的转变</h2>
       <p><strong>日常生活的网络呈现</strong> ：</p>
       <p style="margin-left: 2em;margin-bottom: 10px">
@@ -28,9 +28,10 @@
       <h2>3.摆脱社会规训和被构建的状态</h2>
       <p style="margin-left: 2em;margin-bottom: 30px">
         摆脱社会规训，通过网络新媒体平台以顽强的生命力出现在大众视野，展示农村女性的智慧与力量</p>
-      <div id="rainJie" style="width: 80%;margin-left:3%">
-        <p style="text-indent: 2em;">
-          <b>2024年开年一首大东北我的家乡DJ版席卷了年轻人的抖音页面，带红这首歌的是一位40多岁的东北女人， 因拍摄东北农村生活而走红，一年圈粉1,800万。</b>
+      <div id="rainJie">
+        <p>
+          <b>2024年开年一首大东北我的家乡DJ版席卷了年轻人的抖音页面，带红这首歌的是一位40多岁的东北女人，
+            因拍摄东北农村生活而走红，一年圈粉1,800万。</b>
         </p>
         <p>
           <b>在抖音，他的名字叫东北雨姐，一个扛起半身猪，扛起半人高的铜火锅，徒手给白菜焯水，在冰水里捞咸菜，以上这些都是东北雨姐的日常。</b>
@@ -73,16 +74,23 @@
   h2 {
     margin: 0 0 1em -.6em
   }
+
+  h4 {
+    margin-left: 4em;
+    margin-bottom: 10px
+  }
 }
 
 #rainJie {
-  text-indent: 2em; /* 首行缩进 */
+  width: 80%;
+
   font-family: 'Arial', sans-serif; /* 字体 */
   line-height: 1.6; /* 行高 */
   color: #333; /* 字体颜色 */
-  margin: 1em 0; /* 段落上下边距 */
+  margin: 1em 0 1em 3%; /* 段落上下边距 */
   display: flex;
   flex-direction: column; /* 垂直排列子元素 */
+
   p {
     text-indent: 2em; /* 首行缩进 */
     font-family: 'Arial', sans-serif; /* 字体 */
@@ -96,8 +104,38 @@
     color: #000; /* 粗体文本颜色 */
     display: block; /* 使每个<b>标签独占一行 */
   }
+
   p + p {
     margin-top: 1.5em; /* 段落之间的间隔 */
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .text-box {
+    margin: 0;
+    h1{
+      margin-left: 2vw;
+      margin-bottom: 10px;
+    }
+    h2{
+      margin-left: 2vw;
+      margin-bottom: 10px;
+    }
+    h4 {
+      margin-left: 1em;
+      margin-bottom: 1.2em;
+    }
+    p{
+      padding-right: 10px;
+    }
+  }
+  #rainJie{
+    width: 97%;
+    padding-right: 10px;
+    p{
+      margin: 0 0 0 10px;
+      padding-right:5px ;
+    }
   }
 }
 

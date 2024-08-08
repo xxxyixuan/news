@@ -16,7 +16,7 @@
       </div>
     </div>
     <div class="grid-box">
-      <h1 >制作团队</h1>
+      <h1>制作团队</h1>
       <div class="team-members">
         <div>
           <p>数据搜集与清洗: <strong>熊利 郑博 易恩西 俞婕</strong></p>
@@ -48,7 +48,7 @@
   gap: 20px;
   padding: 20px;
   width: 100%;
-  height: 750px;
+  height: auto;
 }
 
 .grid-box {
@@ -73,5 +73,17 @@ p {
   color: #666;
   font-size: 16px;
   line-height: 1.5;
+  word-wrap: break-word
+}
+
+@media screen and (max-width: 430px) {
+  .grid-box{
+  padding: 5px;
+  }
+  .team-members > div {
+   font-size: 1em;
+    margin: 0;
+  }
+
 }
 </style>

@@ -8,13 +8,52 @@
     <el-container>
       <el-header height="auto" style="padding: 0;">
         <el-affix :offset="0">
-          <div class="nav-bar">
+          <div class="nav-bar-phone"
+               v-if="thisWindowWidth <= 430"
+          >
+            <el-menu
+                :default-active="activeIndex"
+                class="el-menu-demo"
+                mode="horizontal"
+                :ellipsis="false"
+                :width="menuWidth"
+            >
+              <!-- 使用v-for循环AnchorList数组 -->
+              <el-menu-item
+                  class="menu-item"
+                  v-for="(item, index) in AnchorList"
+                  :class="{active:index === activeIndex}"
+                  :key="index"
+                  :index="index.toString()"
+                  @click="scrollTo(`#anchor-${index}`)">
+                {{ item }}
+              </el-menu-item>
+
+              <el-sub-menu v-if="foldable">
+                <template>
+                  <el-menu-item
+                      v-for="(item, index) in hiddenMenuItems"
+                      :key="`folded-${index}`"
+                      :index="(index+visibleMenuItems.length).toString()"
+                      @click="scrollTo(`#anchor-${index + visibleMenuItems.length}`)"
+                  >
+                    {{ item }}
+                  </el-menu-item>
+                </template>
+              </el-sub-menu>
+            </el-menu>
+          </div>
+
+          <div class="nav-bar"
+               v-else-if="thisWindowWidth>430"
+          >
             <!-- 导航链接 -->
             <el-menu
                 :default-active="activeIndex"
                 class="el-menu-demo"
                 mode="horizontal"
                 :ellipsis="false"
+                width="100Vw"
             >
               <!-- 使用v-for循环AnchorList数组 -->
               <el-menu-item
@@ -30,6 +69,7 @@
           </div>
         </el-affix>
       </el-header>
+
       <el-main class="container-main">
 
         <div class="page"
@@ -60,7 +100,7 @@
 </template>
 
 <script setup>
-import {ref, markRaw} from "vue";
+import {ref, markRaw, onMounted} from "vue";
 
 import MainApp from "@/components/MainApp.vue";
 import BackgroundCheck from "@/components/BackgroundCheck.vue";
@@ -79,26 +119,51 @@ const componentNames = [
   {id: 3, name: markRaw(Development3A)},
   {id: 4, name: markRaw(Summarize)},
 ];
-
+// window当前宽度
+let thisWindowWidth = ref(window.innerWidth)
+// 初始菜单宽度
+let menuWidth = '100vw';
+// 是否可折叠
+let foldable = false;
 // 定义锚点列表
-const AnchorList = ref(['背景', '现象', '影响和发展', '助力三农', '总结']);
+const AnchorList = ['背景', '现象', '影响和发展', '助力三农', '总结'];
 
 // 默认选中的菜单项索引，基于AnchorList数组的第一个元素
-const activeIndex = ref(AnchorList.value[0]);
+const activeIndex = ref(AnchorList[0]);
 
 const scrollTo = (anchorId) => {
-  const element = document.querySelector(anchorId);
-  if (element) {
-    element.scrollIntoView({behavior: 'smooth'});
-  }
+  document.querySelector(anchorId).scrollIntoView({behavior: 'smooth'});
 }
+
+const visibleMenuItems = () => {
+  if (window.innerWidth > 860) {
+    return AnchorList;
+  } else {
+    return AnchorList.slice(0, 2);
+  }
+};
+const hiddenMenuItems = () => {
+  if (window.innerWidth > 860) {
+    return [];
+  } else {
+    return AnchorList.slice(2); // 隐藏超出的部分
+  }
+};
 
 window.addEventListener('resize', () => {
   const header = document.querySelector('.nav-bar');
   header.style.width = window.innerWidth + 'px';
 });
 
+const handleResize = () => {
+  menuWidth = window.innerWidth > 860 ? '100Vw' : '100%';
+  foldable = window.innerWidth <= 860;
+};
 
+onMounted(() => {
+  window.addEventListener('resize', handleResize);
+  handleResize();
+})
 
 </script>
 
@@ -160,5 +225,16 @@ h1 {
   border: none;
   border-top: 2px solid #0056b3; /* 分割线颜色 */
   filter: blur(2px);
+}
+
+@media screen and (max-width: 430px) {
+  .el-menu-demo {
+    flex-direction: inherit; /* 垂直排列菜单项 */
+    height: auto;
+    overflow: auto;
+  }
+  .container-main{
+    width: 80%;
+  }
 }
 </style>

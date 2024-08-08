@@ -10,15 +10,18 @@
       <p> 其中，短视频用户规模为10.53亿人，较2022年12月增长4145万人，占网民整体的96.4%。</p>
     </div>
     <div class="D_line" style="margin-left: 30px;margin-right: 50px"/>
+
     <div class="chart-box">
       <el-header>
         <div class="title-box">
+
           <el-menu
               class="menu-box"
               mode="horizontal"
               default-active='1'
               :ellipsis="false"
           >
+
             <el-menu-item
                 class="menu-box-item"
                 v-for="c in chartData"
@@ -32,7 +35,7 @@
           </el-menu>
         </div>
       </el-header>
-      <el-main>
+      <el-main class="--el-main">
         <div class="chart-box">
           <div class="chart-canvas">
             <component :is="currentChart"></component>
@@ -135,14 +138,15 @@ const scrollTo = (id) => {
 }
 
 .chart-box {
-  min-height: 400px;
-  min-width: 400px;
-  overflow-x: hidden;
+  padding: 0;
+  min-height: 80vh;
+  min-width: 50vw;
+  overflow: auto;
 }
 
 
 .menu-box {
-  width: 1000px;
+  width: 100vw;
   background-color: rgba(255, 255, 255, 0.3); /* 导航栏背景色 */
   color: #fff; /* 导航栏文字颜色 */
   display: flex;
@@ -157,9 +161,10 @@ const scrollTo = (id) => {
   }
 }
 
+
 .chart-canvas {
   min-height: 400px;
-  min-width: 800px;
+  min-width: 267px;
   margin: auto;
 }
 
@@ -178,4 +183,12 @@ const scrollTo = (id) => {
   justify-content: space-around; /* 使菜单项均匀分布在标题栏中 */
 }
 
+@media screen and (max-width: 430px){
+  .--el-main{
+    padding: 0;
+  }
+  .menu-box{
+
+  }
+}
 </style>

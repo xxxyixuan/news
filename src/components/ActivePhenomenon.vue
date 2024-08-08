@@ -1,7 +1,7 @@
 <template>
   <div class="flex-box">
     <div class="text-box">
-      <h1 style="margin-top: 45px">二、基层农村女性在互联网中的活跃现象</h1>
+      <h1>二、基层农村女性在互联网中的活跃现象</h1>
       <p>自媒体平台用户增长迅速，根据第53次中国互联网络发展状况统计报告发布的数据</p>
       <p>截至2023年12月，我国网民规模达10.92亿人。</p>
       <p>截至2023年12月，我国农村网民规模达3.62亿人，占整体网民的29.8%。</p>
@@ -35,10 +35,7 @@
       </div>
     </div>
     <div class="People-case text-box">
-      <div class="case-image" style="width: 60%;">
-        <img rel="preload"  src="../assets/picture/小英.png" style="width: 90%;" alt="小英抖音账号截图"/>
-      </div>
-      <div class="case-text" style="margin-right: 10%">
+      <div class="case-text">
         <h4>人物案例二：小英</h4>
         <p>一个来自云南大山里，96年两个孩子，没有公婆，没有文化，在家种地养牛的女孩小英。
           借着一家人鲜明的人设，家庭冲突的张力，和小英让人难以理解的动手能力带来的搞笑反差，让小英在年轻人里爆火。
@@ -50,6 +47,9 @@
           有无数网友对她进行正确的引导——独立自身，教育孩子，学习经营，终于使农村女性小英迎来了人生的春天。
         </p>
       </div>
+      <div class="case-image">
+        <img rel="preload" src="../assets/picture/小英.png" style="width: 90%;" alt="小英抖音账号截图"/>
+      </div>
     </div>
     <div class="text-box">
       <h2>2、现象分析</h2>
@@ -58,73 +58,58 @@
       <p style="text-indent: 2em">根据调研数据显示，农村女性自媒体主体的内容主要包括农村生活经验分享、</p>
       <p>农产品推广、农业技术指导等，其中以农村生活经验分享最为受欢迎。</p>
     </div>
+    <div>
 
-    <div class="excel-box">
-      <el-header>
-        <el-menu
-            class="menu-box"
-            mode="horizontal"
-            default-active='douyin'
-            :ellipsis="false"
-            style="width: 100%;"
-        >
-          <el-menu-item
-              class="menu-box-item"
-              index="douyin"
-              @click="showMenuExcel = 'douyin'"
-          >乡村女性代表性账号基本情况（抖音）
-          </el-menu-item>
-          <el-menu-item
-              class="menu-box-item"
-              index="kuaishou"
-              @click="showMenuExcel = 'kuaishou'"
-          >乡村女性代表性账号基本情况（快手）
-          </el-menu-item>
-        </el-menu>
-      </el-header>
-      <el-main>
-        <div class="excel-box">
-          <el-table
-              class="showExcel"
-              :data="douyinData"
-              v-if="showMenuExcel === 'douyin'"
-              stripe
-              border
-          >
-            <el-table-column type="index" label="序号" width="60px" align="center"></el-table-column>
-            <el-table-column prop="name" label="名称"></el-table-column>
-            <el-table-column prop="follower" label="粉丝数（万）"></el-table-column>
-            <el-table-column prop="age" label="年龄" width="60px" align="center"></el-table-column>
-            <el-table-column prop="address" label="地区"></el-table-column>
-            <el-table-column prop="agencies" label="是否为机构运管" align="center"></el-table-column>
-            <el-table-column prop="positioning" label="账号定位" align="center"></el-table-column>
-            <el-table-column prop="content" label="视频主要内容"></el-table-column>
-          </el-table>
-        </div>
-        <div class="excel-box">
-          <el-table
-              class="showExcel"
-              :data="kuaishouData"
-              v-if="showMenuExcel==='kuaishou'"
-              stripe
-              border
-          >
-            <el-table-column type="index" label="序号" width="60px" align="center"></el-table-column>
-            <el-table-column prop="name" label="名称"></el-table-column>
-            <el-table-column prop="follower" label="粉丝数（万）"></el-table-column>
-            <el-table-column prop="age" label="年龄" width="60px" align="center"></el-table-column>
-            <el-table-column prop="address" label="地区"></el-table-column>
-            <el-table-column prop="agencies" label="是否为机构运管" align="center"></el-table-column>
-            <el-table-column prop="positioning" label="账号定位" align="center"></el-table-column>
-            <el-table-column prop="content" label="视频主要内容"></el-table-column>
-          </el-table>
-        </div>
 
-      </el-main>
+      <div class="showExcel-button">
+        <el-button class="-button-1" @click="showMenuExcel = 'douyin'">
+          <div>
+            基本情况（抖音）
+          </div>
+        </el-button>
+        <el-button class="-button-2" @click="showMenuExcel = 'kuaishou'">
+          <div>
+            基本情况（快手）
+          </div>
+        </el-button>
+      </div>
+    </div>
+    <div>
+      <el-table
+          class="showExcel excel-box"
+          :data="douyinData"
+          v-if="showMenuExcel === 'douyin'"
+          stripe
+          border
+      >
+        <el-table-column type="index" label="序号" width="60px" align="center"></el-table-column>
+        <el-table-column prop="name" label="名称"></el-table-column>
+        <el-table-column prop="follower" label="粉丝数（万）"></el-table-column>
+        <el-table-column prop="age" label="年龄" width="60px" align="center"></el-table-column>
+        <el-table-column prop="address" label="地区"></el-table-column>
+        <el-table-column prop="agencies" label="是否为机构运管" align="center"></el-table-column>
+        <el-table-column prop="positioning" label="账号定位" align="center"></el-table-column>
+        <el-table-column prop="content" label="视频主要内容"></el-table-column>
+      </el-table>
+
+      <el-table
+          class="showExcel excel-box"
+          :data="kuaishouData"
+          v-if="showMenuExcel==='kuaishou'"
+          stripe
+          border
+      >
+        <el-table-column type="index" label="序号" width="60px" align="center"></el-table-column>
+        <el-table-column prop="name" label="名称"></el-table-column>
+        <el-table-column prop="follower" label="粉丝数（万）"></el-table-column>
+        <el-table-column prop="age" label="年龄" width="60px" align="center"></el-table-column>
+        <el-table-column prop="address" label="地区"></el-table-column>
+        <el-table-column prop="agencies" label="是否为机构运管" align="center"></el-table-column>
+        <el-table-column prop="positioning" label="账号定位" align="center"></el-table-column>
+        <el-table-column prop="content" label="视频主要内容"></el-table-column>
+      </el-table>
     </div>
   </div>
-
-
 </template>
 
 <script setup>
@@ -260,8 +245,9 @@ let showMenuExcel = ref('douyin')
 .text-box {
   margin-top: 1em;
   margin-left: 2em;
-
+  width: 100%;
   p {
+    width: 100%;
     display: flex;
     flex-direction: row;
     margin-left: 1em;
@@ -293,6 +279,7 @@ let showMenuExcel = ref('douyin')
     background-color: rgba(7, 7, 7, 0.2) !important;
     border-radius: 8px; /* 添加圆角 */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
+
     p {
       text-indent: 2em;
     }
@@ -313,19 +300,28 @@ let showMenuExcel = ref('douyin')
   }
 }
 
-.menu-box {
-  width: 1000px;
+.showExcel-button {
+  width: 100%;
+  height: 10%;
   background-color: rgba(255, 255, 255, 0.3); /* 导航栏背景色 */
   color: #fff; /* 导航栏文字颜色 */
   display: flex;
+  flex: content;
   flex-direction: row;
 
-  .menu-box-item {
-    flex-direction: row;
-    align-items: center;
-    margin: 0 auto;
-    width: auto;
+  .-button-1 {
+    float: left;
+    width: 50%;
+  }
 
+  .-button-2 {
+    float: right;
+    width: 50%;
+  }
+
+  div {
+    width: 70%;
+    word-break: auto-phrase;
   }
 }
 
@@ -335,8 +331,9 @@ let showMenuExcel = ref('douyin')
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 800px;
+  width: 80vw;
   margin: 0 auto;
+  overflow: auto;
 
   .showExcel {
     margin-bottom: 30px;
@@ -351,5 +348,51 @@ let showMenuExcel = ref('douyin')
   height: 0;
 }
 
+@media screen and (max-width: 430px) {
+  .People-case {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 
+    .case-text {
+      width: 90%;
+      margin: 20px auto;
+      padding: 5px 0 10px;
+
+      p {
+        margin: 0 0 0 5px;
+        padding-right: 5px;
+      }
+
+      h4 {
+        margin: 5px 0 10px 10px;
+      }
+
+    }
+
+    .case-image {
+      height: auto;
+      width: 100%;
+      margin: 0 5%;
+
+      img {
+        width: 90%;
+        border-radius: 8px;
+      }
+    }
+  }
+
+  .text-box {
+    margin: 0;
+    padding: 0;
+
+    h1 {
+      margin-left: 1em;
+    }
+
+    h2 {
+      margin-left: 1.4em;
+    }
+  }
+}
 </style>
