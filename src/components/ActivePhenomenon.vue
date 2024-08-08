@@ -246,6 +246,7 @@ let showMenuExcel = ref('douyin')
   margin-top: 1em;
   margin-left: 2em;
   width: 100%;
+
   p {
     width: 100%;
     display: flex;
@@ -270,16 +271,13 @@ let showMenuExcel = ref('douyin')
 
   .case-text {
     width: 48%;
-    margin: auto;
-    padding-top: 40px;
-    padding-right: 10px;
-    padding-bottom: 30px;
+    margin: 0 auto;
+    padding: 15% 30px 20% 0;
     line-height: 22px;
     font-size: 18px;
     background-color: rgba(7, 7, 7, 0.2) !important;
     border-radius: 8px; /* 添加圆角 */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
-
     p {
       text-indent: 2em;
     }
@@ -356,8 +354,9 @@ let showMenuExcel = ref('douyin')
 
     .case-text {
       width: 90%;
+      height: 50%;
       margin: 20px auto;
-      padding: 5px 0 10px;
+      padding: 5px 20px 10px 0;
 
       p {
         margin: 0 0 0 5px;
@@ -367,7 +366,6 @@ let showMenuExcel = ref('douyin')
       h4 {
         margin: 5px 0 10px 10px;
       }
-
     }
 
     .case-image {
@@ -387,11 +385,16 @@ let showMenuExcel = ref('douyin')
     padding: 0;
 
     h1 {
-      margin-left: 1em;
+      margin-left: .5em;
     }
 
     h2 {
-      margin-left: 1.4em;
+      margin-left: .8em;
+    }
+
+    p {
+      width: 95%;
+      margin-left: 1em;
     }
   }
 }
